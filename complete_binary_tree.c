@@ -4,7 +4,7 @@ typedef struct tagNode {
     struct tagNode *r;
 }Node;
 
-//完全二叉树插入节点保持完全二叉树属性不变
+// 完全二叉树插入节点保持完全二叉树属性不变
 Node *insert(Node *root, Node *new_node) {
     if (root == NULL || new_node == NULL) {
         return NULL;
@@ -18,13 +18,13 @@ Node *insert(Node *root, Node *new_node) {
         return root;
     }
 
-    int lrc = 0;
+    int lrc = 0;  //左孩子的最右边节点数目
     Node *p = root->l;
     while (p != NULL) {
         ++lrc;
         p = p->r;
     }
-    int rrc = 0;
+    int rrc = 0;  //右孩子的最左边节点数目
     p = root->r;
     while (p != NULL) {
         ++rrc;
